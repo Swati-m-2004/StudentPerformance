@@ -1,0 +1,150 @@
+# Task 17 — Dataset Exploration Using Pandas
+
+## Objective
+Explore a dataset using Pandas functions such as `shape`, `columns`, `info()`, `describe()`, `head()`, and `tail()`.
+
+## Tools Used
+- Python
+- Pandas
+- Jupyter Notebook / VS Code
+- CSV dataset
+
+## Project Structure
+```text
+Task_17_Dataset_Exploration/
+├── dataset_exploration.py
+├── student_performance.csv
+└── README.md
+```
+
+## Installation
+Install Pandas:
+
+```bash
+pip install pandas
+```
+
+## How to Run
+
+Open the project folder in VS Code or a terminal and run:
+
+```bash
+python dataset_exploration.py
+```
+
+You can also copy the code into a Jupyter Notebook and execute each section separately.
+
+## Pandas Functions Used
+
+### 1. `head()`
+Displays the first five rows by default.
+
+```python
+df.head()
+```
+
+### 2. `tail()`
+Displays the last five rows by default.
+
+```python
+df.tail()
+```
+
+### 3. `shape`
+Returns the number of rows and columns.
+
+```python
+df.shape
+```
+
+For this dataset, the shape is `(10, 6)`.
+
+### 4. `columns`
+Returns the column names.
+
+```python
+df.columns
+```
+
+### 5. `info()`
+Provides information about:
+- Number of rows
+- Column names
+- Non-null values
+- Data types
+- Memory usage
+
+### 6. `describe()`
+Generates descriptive statistics for numerical columns, including:
+- count
+- mean
+- standard deviation
+- minimum
+- 25th percentile
+- median
+- 75th percentile
+- maximum
+
+### 7. `dtypes`
+Shows the data type of every column.
+
+```python
+df.dtypes
+```
+
+## Numerical and Categorical Columns
+
+Numerical:
+- Student_ID
+- Study_Hours
+- Attendance
+- Math_Score
+- Final_Score
+
+Categorical:
+- Name
+
+## Key Observations
+1. The dataset contains 10 student records.
+2. It contains 6 columns.
+3. Study hours, attendance, mathematics score, and final score are numerical variables.
+4. Name is a categorical/text variable.
+5. The average Final Score is 85.8.
+6. The highest Final Score is 98.
+7. The lowest Final Score is 68.
+8. The dataset contains no missing values.
+
+## Why Dataset Exploration Is Important
+Dataset exploration should be performed before machine learning because it helps us understand the structure, data types, missing values, ranges, distributions, and possible problems in the data. This reduces errors during preprocessing and model training.
+
+## Interview Questions
+
+### 1. Why should a dataset be explored before modeling?
+To understand its structure, data types, missing values, distributions, outliers, and relationships before training a machine learning model.
+
+### 2. What does `DataFrame.shape` return?
+It returns a tuple containing the number of rows and columns.
+
+### 3. What information does `info()` provide?
+It provides column names, data types, non-null counts, and memory information.
+
+### 4. What is the purpose of `describe()`?
+It provides statistical summaries of numerical columns.
+
+### 5. How can you find missing values?
+```python
+df.isnull().sum()
+```
+
+### 6. How do you identify numerical columns?
+```python
+df.select_dtypes(include="number").columns
+```
+
+### 7. How do you identify categorical columns?
+```python
+df.select_dtypes(include="object").columns
+```
+
+## Conclusion
+This task demonstrates the basic exploratory data analysis stage of a machine learning workflow. Pandas makes it easy to inspect dataset dimensions, columns, data types, statistical summaries, and missing values before proceeding to data cleaning and modeling.
